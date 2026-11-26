@@ -1,0 +1,353 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Golden Sip Juice Bar</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Layout: dark luxury studio. Full-bleed hero video, tagline strip, filterable menu grid, floating order tray. */
+:root {
+  --bg: #0d0a07;
+  --surface: #17120d;
+  --surface-2: #211a12;
+  --line: rgba(233, 185, 73, 0.18);
+  --gold: #e9b949;
+  --gold-deep: #b98a1f;
+  --fg: #f4ece0;
+  --muted: #b3a690;
+  --display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --body: "Jost", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 120px;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.wrap { max-width: 1280px; margin: 0 auto; }
+
+/* header */
+header.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: rgba(13, 10, 7, 0.88); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  margin-left: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px)));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.nav { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.logo { font-family: var(--display); font-style: italic; font-weight: 600; font-size: 1.7rem; text-decoration: none; color: var(--gold); letter-spacing: 0.01em; }
+.nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+.nav ul a { text-decoration: none; font-size: 0.82rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.nav ul a:hover { color: var(--fg); }
+.nav .cart-btn { border: 1px solid var(--line); background: transparent; border-radius: 999px; padding: 8px 16px; font-size: 0.85rem; display: inline-flex; gap: 8px; align-items: center; }
+.nav .cart-btn:hover { border-color: var(--gold); }
+.cart-count { background: var(--gold); color: #1a1205; border-radius: 999px; min-width: 22px; height: 22px; display: inline-grid; place-items: center; font-size: 0.75rem; font-weight: 600; padding: 0 6px; }
+
+/* hero video */
+.hero { margin: 20px auto 0; max-width: 1280px; position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: #000; }
+.hero video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; max-height: 78vh; }
+.sound { position: absolute; right: 14px; bottom: 14px; background: rgba(13,10,7,0.7); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.sound:hover { border-color: var(--gold); }
+
+.tagline { max-width: 1280px; margin: 0 auto; padding-block: 56px 24px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px 64px; align-items: end; }
+.eyebrow { font-size: 0.78rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+.tagline h1 { font-family: var(--display); font-weight: 500; font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: 1.02; margin: 0; text-wrap: balance; }
+.tagline h1 em { color: var(--gold); font-weight: 600; }
+.tagline p.lead { color: var(--muted); max-width: 44ch; margin: 0 0 22px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; padding: 12px 26px; border-radius: 999px; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; }
+.btn:hover { background: var(--gold); color: #1a1205; }
+
+.facts { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-block: 1px solid var(--line); margin-top: 40px; }
+.facts div { padding: 22px 24px; border-left: 1px solid var(--line); }
+.facts div:first-child { border-left: 0; padding-left: 0; }
+.facts b { display: block; font-family: var(--display); font-size: 1.5rem; font-weight: 600; color: var(--fg); }
+.facts span { color: var(--muted); font-size: 0.9rem; }
+
+/* menu */
+section.menu { max-width: 1280px; margin: 0 auto; padding-top: 88px; scroll-margin-top: 70px; }
+.menu-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 32px; }
+.menu-head h2 { font-family: var(--display); font-weight: 500; font-size: clamp(2.2rem, 4.5vw, 3.4rem); line-height: 1.05; margin: 0; }
+.menu-head h2 em { color: var(--gold); }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.tab { border: 1px solid var(--line); background: transparent; border-radius: 999px; padding: 8px 18px; font-size: 0.85rem; color: var(--muted); }
+.tab:hover { color: var(--fg); border-color: var(--gold-deep); }
+.tab[aria-pressed="true"] { background: var(--gold); color: #1a1205; border-color: var(--gold); font-weight: 500; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+ .card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px; display: flex; flex-direction: column; gap: 14px; min-width: 0; overflow: hidden; transition: transform .45s cubic-bezier(.2,.8,.2,1), border-color .35s, box-shadow .45s; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 22px 50px rgba(0,0,0,.38); }
+.juice-photo { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 4px; background: #211a12; isolation: isolate; }
+.juice-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.01); transition: transform 1.1s cubic-bezier(.2,.7,.2,1), filter .6s; filter: saturate(1.08) contrast(1.04); }
+.card:hover .juice-photo img { transform: scale(1.09); filter: saturate(1.22) contrast(1.07); }
+.juice-photo::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(10,7,4,.62)); pointer-events: none; }
+.photo-label { position: absolute; z-index: 1; left: 12px; bottom: 10px; color: #fff4df; font-size: .68rem; letter-spacing: .19em; text-transform: uppercase; text-shadow: 0 2px 10px #000; }
+.card-top { display: flex; gap: 15px; align-items: center; }
+.glass { display:none; }
+.card:hover { border-color: rgba(233, 185, 73, 0.4); }
+.card-top { display: flex; gap: 18px; align-items: center; }
+.glass { flex: none; width: 64px; height: 92px; position: relative; filter: drop-shadow(0 8px 14px rgba(0,0,0,0.5)); }
+.glass i { position: absolute; inset: 0; clip-path: polygon(8% 0, 92% 0, 80% 100%, 20% 100%); background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.06)); }
+.glass i::after { content: ""; position: absolute; left: 0; right: 0; top: 14%; bottom: 0; background: linear-gradient(180deg, var(--c1), var(--c2)); opacity: 0.95; }
+.glass i::before { content: ""; position: absolute; z-index: 1; left: 22%; top: 20%; width: 9%; height: 55%; background: rgba(255,255,255,0.35); border-radius: 4px; }
+.card h3 { font-family: var(--display); font-size: 1.65rem; font-weight: 600; line-height: 1.1; margin: 0; }
+.cal { color: var(--muted); font-size: 0.8rem; letter-spacing: 0.06em; margin-top: 4px; }
+.ing { margin: 0; color: var(--muted); font-size: 0.93rem; flex: 1; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--line); padding: 2px 9px; border-radius: 999px; color: var(--gold); }
+.buy { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid var(--line); padding-top: 14px; flex-wrap: wrap; }
+.sizes { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.sizes button { background: transparent; border: 0; padding: 6px 12px; font-size: 0.78rem; color: var(--muted); }
+.sizes button[aria-pressed="true"] { background: var(--surface-2); color: var(--gold); }
+.price { font-family: var(--display); font-size: 1.5rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.add { background: var(--gold); color: #1a1205; border: 0; border-radius: 999px; padding: 8px 18px; font-weight: 500; font-size: 0.85rem; }
+.add:hover { background: #f3c95e; }
+.note { color: var(--muted); font-size: 0.85rem; margin-top: 28px; }
+
+/* about */
+.about { max-width: 1280px; margin: 0 auto; padding-top: 96px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px 64px; }
+.about h2 { font-family: var(--display); font-weight: 500; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08; margin: 0; }
+.about h2 em { color: var(--gold); }
+.about p { color: var(--muted); margin: 0 0 14px; max-width: 52ch; }
+footer { max-width: 1280px; margin: 88px auto 0; border-top: 1px solid var(--line); padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 0.85rem; }
+
+/* order tray */
+.tray-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; padding: 12px max(16px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: rgba(23, 18, 13, 0.96); backdrop-filter: blur(10px); border-top: 1px solid var(--gold-deep); }
+.tray-bar .in { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.tray-bar b { font-family: var(--display); font-size: 1.4rem; font-variant-numeric: tabular-nums; }
+.drawer { position: fixed; z-index: 40; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(76px + env(safe-area-inset-bottom, 0px)); width: min(400px, calc(100vw - 32px)); max-height: 70vh; overflow: auto; background: var(--surface); border: 1px solid var(--gold-deep); border-radius: 8px; padding: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.7); }
+.drawer h3 { font-family: var(--display); font-size: 1.6rem; margin: 0 0 12px; }
+.line { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+.line small { color: var(--muted); }
+.qty { display: inline-flex; align-items: center; gap: 8px; }
+.qty button { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line); background: transparent; line-height: 1; }
+.qty button:hover { border-color: var(--gold); }
+.total { display: flex; justify-content: space-between; border-top: 1px solid var(--gold-deep); padding-top: 12px; margin-top: 4px; font-size: 1.1rem; font-variant-numeric: tabular-nums; }
+.drawer .actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+.ghost { background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 8px 18px; font-size: 0.85rem; color: var(--muted); }
+.ghost:hover { color: var(--fg); border-color: var(--gold-deep); }
+.toast { color: var(--gold); font-size: 0.85rem; margin: 10px 0 0; min-height: 1.2em; }
+textarea.copybox { width: 100%; margin-top: 10px; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 10px; font: 0.85rem/1.4 var(--body); resize: vertical; }
+
+@media (max-width: 820px) {
+  .nav ul { display: none; }
+  .tagline, .about { grid-template-columns: 1fr; }
+  .facts { grid-template-columns: 1fr; }
+  .facts div { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
+  .facts div:first-child { border-top: 0; }
+  .hero video { aspect-ratio: 3 / 2; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+
+<header class="top">
+  <nav class="nav" aria-label="Main">
+    <a class="logo" href="#top">Golden Sip</a>
+    <ul>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">Our Promise</a></li>
+    </ul>
+    <button class="cart-btn" id="openCart" type="button" aria-expanded="false" aria-controls="drawer">Your order <span class="cart-count" id="count">0</span></button>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <video id="vid" src="juice.mp4" poster="poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Fresh juice splashing out of a glass surrounded by fruit"></video>
+  </div>
+
+  <div class="tagline">
+    <div>
+      <p class="eyebrow">Fresh · Natural · Healthy</p>
+      <h1>Nature's goodness <em>in every sip</em></h1>
+    </div>
+    <div>
+      <p class="lead">Pressed to order from whole fruit. No concentrate, no added sugar, no shortcuts. Pick a juice, choose a size, and build your order below.</p>
+      <a class="btn" href="#menu">Explore our juices <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div><b>Pressed to order</b><span>Every glass is squeezed after you order it.</span></div>
+    <div><b>0 g added sugar</b><span>Sweetness comes from the fruit alone.</span></div>
+    <div><b>300 ml or 500 ml</b><span>Two sizes on every juice.</span></div>
+  </div>
+
+  <section class="menu" id="menu" aria-labelledby="menuTitle">
+    <div class="menu-head">
+      <h2 id="menuTitle">The juice <em>menu</em></h2>
+      <div class="tabs" id="tabs" role="group" aria-label="Filter juices"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="note">Prices are in Pakistani rupees. Menu and prices are sample content, so replace them with your own.</p>
+  </section>
+
+  <section class="about" id="about">
+    <h2>Simple fruit, <em>nothing else</em></h2>
+    <div>
+      <p>Each juice on this menu starts with whole fruit and vegetables, washed and pressed in small batches through the day. Ice is optional and always free.</p>
+      <p>Ask for less ice, no ice, or a squeeze of lemon on any drink. We will make it the way you like it.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>Golden Sip Juice Bar</span>
+  <span>Open daily, 10 am to 11 pm</span>
+</footer>
+
+<div class="tray-bar" id="trayBar" hidden>
+  <div class="in">
+    <span><span id="trayItems">0 items</span> · <b id="trayTotal">Rs 0</b></span>
+    <button class="add" id="viewOrder" type="button">View order</button>
+  </div>
+</div>
+
+<aside class="drawer" id="drawer" hidden aria-label="Your order"></aside>
+
+<script>
+(function () {
+  var JUICES = [
+    { id: "orange", name: "Orange Sunrise", cat: "Citrus", image: "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=1000&q=85", c1: "#ffb62e", c2: "#f27a0c", ing: "Fresh-pressed Valencia oranges. Nothing added.", cal: 110, p: [380, 560], tags: ["Vitamin C", "Bestseller"] },
+    { id: "lemon", name: "Mint Lemonade", cat: "Citrus", image: "https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=1000&q=85", c1: "#f3f08a", c2: "#9fd05a", ing: "Lemon, fresh mint, a touch of honey, sparkling or still.", cal: 95, p: [320, 480], tags: ["Refreshing"] },
+    { id: "grapefruit", name: "Pink Grapefruit", cat: "Citrus", image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=1000&q=85", c1: "#ff9a9a", c2: "#e85a6b", ing: "Ruby grapefruit with a splash of orange to soften the edge.", cal: 100, p: [400, 600], tags: ["Light"] },
+    { id: "pineapple", name: "Pineapple Cooler", cat: "Tropical", image: "https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?auto=format&fit=crop&w=1000&q=85", c1: "#ffe55c", c2: "#f2b705", ing: "Golden pineapple, lime and crushed ice.", cal: 130, p: [400, 600], tags: ["Bestseller"] },
+    { id: "mango", name: "Mango Gold", cat: "Tropical", image: "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=1000&q=85", c1: "#ffc83d", c2: "#f08a00", ing: "Ripe Sindhri mango, a little milk-free cream of coconut.", cal: 190, p: [450, 680], tags: ["Seasonal", "Thick"] },
+    { id: "sugarcane", name: "Sugarcane & Lime", cat: "Tropical", image: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=1000&q=85", c1: "#d9f08a", c2: "#8cc152", ing: "Freshly pressed sugarcane with lime and a pinch of black salt.", cal: 150, p: [300, 450], tags: ["Local favourite"] },
+    { id: "watermelon", name: "Watermelon Chill", cat: "Tropical", image: "https://images.unsplash.com/photo-1563114773-84221bd62daa?auto=format&fit=crop&w=1000&q=85", c1: "#ff7b8a", c2: "#e0304f", ing: "Seedless watermelon, mint and a squeeze of lime.", cal: 80, p: [350, 520], tags: ["Hydrating"] },
+    { id: "strawberry", name: "Strawberry Blush", cat: "Berry", image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=1000&q=85", c1: "#ff6f8e", c2: "#d6204f", ing: "Strawberries, apple and a few drops of lemon.", cal: 120, p: [450, 680], tags: ["Fan pick"] },
+    { id: "blueberry", name: "Blueberry Burst", cat: "Berry", image: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?auto=format&fit=crop&w=1000&q=85", c1: "#9a7bff", c2: "#4a2fa8", ing: "Blueberries, banana and apple, blended smooth.", cal: 170, p: [520, 760], tags: ["Antioxidants"] },
+    { id: "pomegranate", name: "Pomegranate Ruby", cat: "Berry", image: "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1000&q=85", c1: "#e8456b", c2: "#8e1230", ing: "Hand-pressed pomegranate seeds. Bold and tart.", cal: 140, p: [500, 740], tags: ["Premium"] },
+    { id: "green", name: "Green Detox", cat: "Green", image: "https://images.unsplash.com/photo-1610970881699-44a5587bb8c5?auto=format&fit=crop&w=1000&q=85", c1: "#b6e36a", c2: "#4d9a3a", ing: "Cucumber, spinach, green apple, ginger and lemon.", cal: 70, p: [420, 620], tags: ["Low sugar", "Vegan"] },
+    { id: "kiwi", name: "Kiwi Apple Crush", cat: "Green", image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=1000&q=85", c1: "#c8ec6a", c2: "#78b83a", ing: "Kiwi, green apple and a little lime.", cal: 105, p: [450, 660], tags: ["Tangy"] },
+    { id: "carrot", name: "Carrot Ginger", cat: "Green", image: "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?auto=format&fit=crop&w=1000&q=85", c1: "#ffa94d", c2: "#e8640a", ing: "Sweet carrot, ginger and a hint of orange.", cal: 90, p: [350, 520], tags: ["Immunity"] },
+    { id: "apple", name: "Red Apple Crisp", cat: "Green", image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=1000&q=85", c1: "#ff8a7a", c2: "#c92a2a", ing: "Kashmiri red apples, cinnamon and a little ice.", cal: 115, p: [380, 560], tags: ["Classic"] }
+  ];
+  var CATS = ["All", "Citrus", "Tropical", "Berry", "Green"];
+  var size = {};      // id -> 0|1
+  var cart = {};      // id|size -> qty
+  var active = "All";
+  var SIZE_LABEL = ["300 ml", "500 ml"];
+
+  var $ = function (id) { return document.getElementById(id); };
+  var rs = function (n) { return "Rs " + n.toLocaleString("en-US"); };
+
+  function renderTabs() {
+    $("tabs").innerHTML = CATS.map(function (c) {
+      return '<button class="tab" type="button" data-cat="' + c + '" aria-pressed="' + (c === active) + '">' + c + "</button>";
+    }).join("");
+  }
+  function renderGrid() {
+    $("grid").innerHTML = JUICES.filter(function (j) { return active === "All" || j.cat === active; }).map(function (j) {
+      var s = size[j.id] || 0;
+      return '<article class="card" data-id="' + j.id + '">' +
+        '<div class="juice-photo"><img src="' + j.image + '" alt="' + j.name + ' fresh juice, cinematic food photography" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=\'https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=1000&q=85\'"><span class="photo-label">Golden Sip · Fresh Pressed</span></div>' +
+        '<div class="card-top"><div class="glass" style="--c1:' + j.c1 + ";--c2:" + j.c2 + '"><i></i></div>' +
+        '<div><h3>' + j.name + '</h3><div class="cal">' + j.cal + " kcal · " + SIZE_LABEL[s] + "</div></div></div>" +
+        '<p class="ing">' + j.ing + "</p>" +
+        '<div class="tags">' + j.tags.map(function (t) { return '<span class="tag">' + t + "</span>"; }).join("") + "</div>" +
+        '<div class="buy"><div class="sizes" role="group" aria-label="Size">' +
+        SIZE_LABEL.map(function (l, i) { return '<button type="button" data-size="' + i + '" aria-pressed="' + (i === s) + '">' + l + "</button>"; }).join("") +
+        '</div><span class="price">' + rs(j.p[s]) + '</span><button class="add" type="button" data-add="1">Add</button></div></article>';
+    }).join("");
+  }
+  function find(id) { return JUICES.filter(function (j) { return j.id === id; })[0]; }
+
+  function totals() {
+    var items = 0, sum = 0;
+    Object.keys(cart).forEach(function (k) {
+      var p = k.split("|"), j = find(p[0]);
+      items += cart[k]; sum += cart[k] * j.p[+p[1]];
+    });
+    return { items: items, sum: sum };
+  }
+  function renderCart() {
+    var t = totals();
+    $("count").textContent = t.items;
+    $("trayItems").textContent = t.items + (t.items === 1 ? " item" : " items");
+    $("trayTotal").textContent = rs(t.sum);
+    $("trayBar").hidden = t.items === 0;
+    if (t.items === 0) closeDrawer();
+    if (!$("drawer").hidden) renderDrawer();
+  }
+  function orderText() {
+    var lines = Object.keys(cart).map(function (k) {
+      var p = k.split("|"), j = find(p[0]);
+      return cart[k] + " x " + j.name + " (" + SIZE_LABEL[+p[1]] + ") - " + rs(cart[k] * j.p[+p[1]]);
+    });
+    return "Golden Sip order\n" + lines.join("\n") + "\nTotal: " + rs(totals().sum);
+  }
+  function renderDrawer(msg) {
+    var keys = Object.keys(cart);
+    var h = "<h3>Your order</h3>";
+    if (!keys.length) h += '<p class="ing">Nothing here yet. Add a juice from the menu.</p>';
+    keys.forEach(function (k) {
+      var p = k.split("|"), j = find(p[0]);
+      h += '<div class="line"><div>' + j.name + '<br><small>' + SIZE_LABEL[+p[1]] + " · " + rs(j.p[+p[1]]) + '</small></div>' +
+        '<div class="qty" data-key="' + k + '"><button type="button" data-d="-1" aria-label="Remove one">−</button><span>' + cart[k] + '</span><button type="button" data-d="1" aria-label="Add one">+</button></div></div>';
+    });
+    h += '<div class="total"><span>Total</span><b>' + rs(totals().sum) + "</b></div>" +
+      '<div class="actions"><button class="add" type="button" id="copyOrder">Copy order</button><button class="ghost" type="button" id="clearOrder">Clear</button><button class="ghost" type="button" id="closeDrawer">Close</button></div>' +
+      '<p class="toast" id="toast" role="status">' + (msg || "") + "</p>";
+    $("drawer").innerHTML = h;
+  }
+  function openDrawer() { renderDrawer(); $("drawer").hidden = false; $("openCart").setAttribute("aria-expanded", "true"); }
+  function closeDrawer() { $("drawer").hidden = true; $("openCart").setAttribute("aria-expanded", "false"); }
+
+  $("tabs").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-cat]"); if (!b) return;
+    active = b.dataset.cat; renderTabs(); renderGrid();
+  });
+  $("grid").addEventListener("click", function (e) {
+    var card = e.target.closest(".card"); if (!card) return;
+    var id = card.dataset.id, sb = e.target.closest("[data-size]");
+    if (sb) { size[id] = +sb.dataset.size; renderGrid(); return; }
+    if (e.target.closest("[data-add]")) {
+      var k = id + "|" + (size[id] || 0);
+      cart[k] = (cart[k] || 0) + 1; renderCart();
+      var btn = e.target.closest("[data-add]"); btn.textContent = "Added"; setTimeout(function () { btn.textContent = "Add"; }, 900);
+    }
+  });
+  $("drawer").addEventListener("click", function (e) {
+    var d = e.target.closest("[data-d]");
+    if (d) {
+      var k = d.parentNode.dataset.key; cart[k] += +d.dataset.d;
+      if (cart[k] <= 0) delete cart[k];
+      renderCart(); return;
+    }
+    if (e.target.id === "closeDrawer") closeDrawer();
+    if (e.target.id === "clearOrder") { cart = {}; renderCart(); }
+    if (e.target.id === "copyOrder") {
+      var txt = orderText();
+      var fallback = function () {
+        renderDrawer("Select and copy your order:");
+        var ta = document.createElement("textarea"); ta.className = "copybox"; ta.rows = 5; ta.value = txt;
+        $("drawer").appendChild(ta); ta.focus(); ta.select();
+      };
+      try { navigator.clipboard.writeText(txt).then(function () { renderDrawer("Order copied. Send it to us to confirm."); }, fallback); } catch (err) { fallback(); }
+    }
+  });
+  $("openCart").addEventListener("click", function () { $("drawer").hidden ? openDrawer() : closeDrawer(); });
+  $("viewOrder").addEventListener("click", function () { $("drawer").hidden ? openDrawer() : closeDrawer(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeDrawer(); });
+
+  var v = $("vid");
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { v.removeAttribute("autoplay"); v.pause(); v.controls = true; }
+
+  renderTabs(); renderGrid(); renderCart();
+})();
+</script>
+
+</body></html>
